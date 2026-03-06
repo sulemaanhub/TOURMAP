@@ -1,1 +1,95 @@
 # TOURMAP
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>World Tourism Finder</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+background-size:cover;
+background-position:center;
+}
+
+.container{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:15px;
+text-align:center;
+}
+
+h1{
+color:white;
+margin-bottom:25px;
+}
+
+input{
+padding:10px;
+width:250px;
+border:none;
+border-radius:8px;
+margin-bottom:15px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+border:none;
+border-radius:8px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.08);
+background:linear-gradient(45deg,#ff9966,#ff5e62);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌍 World Tourism Finder</h1>
+
+<input type="text" id="city" placeholder="Enter any city (e.g. Paris, Tokyo, Dubai)">
+
+<br>
+
+<button onclick="searchCity()">Show Tourist Places</button>
+
+</div>
+
+<script>
+
+function searchCity(){
+
+let city=document.getElementById("city").value;
+
+if(city===""){
+alert("Please enter a city name");
+return;
+}
+
+let url="https://www.google.com/maps/search/tourist+places+in+"+city;
+
+window.open(url,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>
